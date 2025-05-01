@@ -1,0 +1,11 @@
+{
+	"name": "Routers",
+	"description": "TBoolRouter is a utility for routing the execution of code conditionally based on boolean values. It makes the separation of actions for true/false cases cleaner and more organized, bringing clarity, extensibility, and reduction of duplicated code in scenarios where boolean decisions control the application's flow. It's ideal for applications that value clean code and decoupling of decision logic.",
+	"version": "1.0.0",
+	"homepage": "https://github.com/ThiagoIrrazabal/Routers",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {
+		"https://github.com/thiagoirrazabal/smartpointer": ">0.0.0"
+	}
+}

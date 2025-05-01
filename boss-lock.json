@@ -1,0 +1,14 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2025-05-01T10:34:02.8886672-03:00",
+	"installedModules": {
+		"https://github.com/thiagoirrazabal/smartpointer": {
+			"name": "smartpointer",
+			"version": "main",
+			"hash": "1a9649cb15c07e515dc477ca728e7c21",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}
