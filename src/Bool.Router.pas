@@ -11,7 +11,7 @@ uses
 type
   IBoolRouter = Interface(IInterface)
     ['{4B319973-EEE9-4B61-A13B-5B16D20A4F4B}']
-    procedure Execute(const ACondition: Boolean; const Args: TArray<TValue>);
+    function Execute(const ACondition: Boolean; const Args: TArray<TValue>): IBoolRouter;
   End;
 
   TBoolRouter = class(TInterfacedObject, IBoolRouter)
@@ -25,7 +25,7 @@ type
     class function New(const ATrue, AFalse: TProc<TArray<TValue>>): IBoolRouter; overload;
     class function New(const AProc: TProc<TArray<TValue>>;
       const ACondition: Boolean): IBoolRouter; overload;
-    procedure Execute(const ACondition: Boolean; const Args: TArray<TValue>);
+    function Execute(const ACondition: Boolean; const Args: TArray<TValue>): IBoolRouter;
   End;
 
 implementation
@@ -52,10 +52,11 @@ begin
     end);
 end;
 
-procedure TBoolRouter.Execute(const ACondition: Boolean; const Args: TArray<TValue>);
+function TBoolRouter.Execute(const ACondition: Boolean; const Args: TArray<TValue>): IBoolRouter;
 var
   lMethod: TProc<TArray<TValue>>;
 begin
+  Result := Self;
   FListMethods.TryGetValue(ACondition, lMethod);
   lMethod(Args);
 end;
